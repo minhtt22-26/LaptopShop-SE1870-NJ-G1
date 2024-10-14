@@ -9,17 +9,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-<<<<<<< Updated upstream
 import java.util.Date;
 import java.util.List;
 import model.Order;
-=======
 import java.util.List;
 import model.Order;
 import model.ProductDetail;
 import model.User;
 import model.Voucher;
->>>>>>> Stashed changes
 import model.OrderDetail;
 
 /**
@@ -243,8 +240,7 @@ public class OderDAO extends DBContext {
         }
         return null;
     }
-<<<<<<< Updated upstream
-=======
+
 
     public boolean updateNewestOrderContactInfo(int userId, String newPhone, String newAddress, String newUsername) {
         String sql = "UPDATE [Order] "
@@ -268,7 +264,7 @@ public class OderDAO extends DBContext {
         }
         return false; // Cập nhật thất bại
     }
->>>>>>> Stashed changes
+
 
     public List<Order> getAllOrder() {
         String sql = "SELECT * FROM [Order]";
@@ -437,10 +433,10 @@ public class OderDAO extends DBContext {
     public static void main(String[] args) {
         OderDAO o = new OderDAO();
 
-        //List<OrderDetail> l = o.getAllOrdetailByID(1);
-        //System.out.println(l);
+        List<OrderDetail> l = o.getAllOrdetailByID(2);
+        System.out.println(l);
         
-        o.updateEnddate(LocalDateTime.now(), 27);
+        //o.updateEnddate(LocalDateTime.now(), 27);
 
     }
 }
