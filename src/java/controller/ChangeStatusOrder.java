@@ -68,14 +68,6 @@ public class ChangeStatusOrder extends HttpServlet {
         action = "wait";
         request.setAttribute("action", action);
         response.sendRedirect("selectOrderbyStatus?action=" + action);
-        if (action.equals("accepted")) {
-            oDAO.changeOrderStatus(action, oid);
-        }else if(action.equals("rejected")){
-            oDAO.changeOrderStatus(action, oid);
-        }
-        action = "wait";
-        request.setAttribute("action", action);
-        response.sendRedirect("selectOrderbyStatus?action=" + action);
     }
 
     /**
@@ -112,13 +104,6 @@ public class ChangeStatusOrder extends HttpServlet {
             request.setAttribute("action", action);
             response.sendRedirect("selectOrderbyStatus?action=" + action);
         }
-        if (action.equals("intransit")) {
-            oDAO.changeOrderStatus(action, oid);
-        }
-        
-        action = "accepted";
-        request.setAttribute("action", action);
-        response.sendRedirect("selectOrderbyStatus?action=" + action);
     }
 
     /**
